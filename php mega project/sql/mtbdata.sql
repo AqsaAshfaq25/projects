@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2023 at 03:56 PM
+-- Generation Time: Feb 26, 2023 at 09:25 PM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.1.12
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mtbproject`
+-- Database: `mtbdata`
 --
 
 -- --------------------------------------------------------
@@ -29,12 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `admin` (
   `admin_id` int(250) NOT NULL,
-  `admin_name` varchar(250) DEFAULT NULL,
-  `password` varchar(250) DEFAULT NULL,
-  `email` varchar(250) DEFAULT NULL,
-  `contact_no` varchar(250) DEFAULT NULL,
-  `user_id` int(250) DEFAULT NULL
+  `admin_name` varchar(250) NOT NULL,
+  `admin_password` varchar(250) NOT NULL,
+  `email` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_password`, `email`) VALUES
+(1001, 'Aqsa ', 'Ashfaq', 'aqsaashfaq510@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -66,8 +71,7 @@ INSERT INTO `registration` (`user_id`, `user_name`, `email`, `password`, `phone_
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`admin_id`),
-  ADD KEY `test` (`user_id`);
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `registration`
@@ -83,23 +87,13 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(250) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1002;
 
 --
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
   MODIFY `user_id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `admin`
---
-ALTER TABLE `admin`
-  ADD CONSTRAINT `test` FOREIGN KEY (`user_id`) REFERENCES `registration` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
