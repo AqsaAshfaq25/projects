@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2023 at 09:25 PM
+-- Generation Time: Feb 27, 2023 at 10:13 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_password`, `email`) VALUES
-(1001, 'Aqsa ', 'Ashfaq', 'aqsaashfaq510@gmail.com');
+(1001, 'Aqsa Ashfaq', 'Ashfaq', 'aqsaashfaq510@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -53,15 +53,17 @@ CREATE TABLE `registration` (
   `email` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL,
   `phone_no` varchar(250) NOT NULL,
-  `country` varchar(250) NOT NULL
+  `country` varchar(250) NOT NULL,
+  `picture` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `registration`
 --
 
-INSERT INTO `registration` (`user_id`, `user_name`, `email`, `password`, `phone_no`, `country`) VALUES
-(1, 'areeba', 'areeba@gmail.com', 'areeba10', '03334552', 'pakistan');
+INSERT INTO `registration` (`user_id`, `user_name`, `email`, `password`, `phone_no`, `country`, `picture`) VALUES
+(1, 'areeba', 'areeba@gmail.com', 'areeba10', '03334552', 'pakistan', 'admin.dp.png'),
+(2, 'Sana', 'sana@gmail.com', 'sana10', '0343484911', 'Pakistan', 'admin.dp.png');
 
 --
 -- Indexes for dumped tables
@@ -93,7 +95,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `user_id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
